@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails',        '5.1.4'
 gem 'bootstrap-sass', '3.3.7'
-gem 'sprockets'
 gem 'slim', '2.0.0'
 gem 'sprockets-rails'
 gem 'puma',         '3.9.1'
