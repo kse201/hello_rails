@@ -4,8 +4,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
-
-  test 'invalid signup information' do
+test 'invalid signup information' do
     get signup_path
     assert_no_difference 'User.count' do
       post users_path, params: {
@@ -37,6 +36,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
     assert_template 'users/show'
-    assert_not flash[:danger]
+    assert is_logged_in?
   end
 end
