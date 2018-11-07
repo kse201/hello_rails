@@ -58,8 +58,7 @@ p {
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
+  padding-top: 9px; font-weight: bold;
   &:hover {
     color: white;
     text-decoration: none;
@@ -158,6 +157,20 @@ input, textarea, select, .uneditable-input {
 
 input {
     height: auto !important;
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+    width: auto;
+    margin-left: 0;
 }
 
 #error_explanation {
