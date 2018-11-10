@@ -12,6 +12,9 @@ gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 gem 'bcrypt', '3.1.11'
+gem 'will_paginate', '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
+gem 'faker', '1.7.3'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
