@@ -4,10 +4,23 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
     @other_user = users(:archer)
+    @non_activated_user = users(:non_active)
   end
   test 'should get new' do
     get signup_path
     assert_response :success
+  end
+
+  test 'should not allow show non-activated user' do
+    log_in_as(@user)
+    get user_path(@non_activated_user)
+    assert_redirected_to root_url
+  end
+
+  test 'should allow show activated user' do
+    log_in_as(@user)
+    get user_path(@other_user)
+    assert_template 'users/show'
   end
 
   test 'should not allow the admin attribute to be edited via the web' do
