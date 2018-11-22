@@ -19,9 +19,14 @@ Rails.application.routes.draw do
   get '/home', to: 'static_pages#home'
   get '/contact', to: 'static_pages#contact'
 
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   resources :account_activations, only: %i[edit]
   resources :microposts, only: %i[create destroy]
+  resources :relationships, only: %i[create destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
